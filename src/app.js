@@ -1,6 +1,8 @@
 require('dotenv').config()
 
-require('mongoose').connect(process.env.MONGODB_URL, {
+const { PORT, MONGODB_URL } = process.env
+
+require('mongoose').connect(MONGODB_URL, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useFindAndModify: false,
@@ -10,12 +12,6 @@ require('mongoose').connect(process.env.MONGODB_URL, {
   process.exit(1)
 })
 
-const app = require('express')()
-
-app.use('/products', require('./routes/products'))
-
-const API_DOCS = require('path').join(__dirname, '../DOCS.md')
-app.get('/docs', (req, res) => res.sendFile(API_DOCS))
-
-const { PORT } = process.env
-app.listen(PORT, () => console.log(`Server running at port ${PORT}`))
+require('express')()
+  .use('/products', require('./routes/products'))
+  .listen(PORT, () => console.log(`Server running at port ${PORT}`))

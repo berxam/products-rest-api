@@ -1,7 +1,13 @@
 const { Schema, model } = require('mongoose')
 
+const PLACEHOLDER_IMG = 'https://pokerrun.fi/wp-content/uploads/2020/03/image-placeholder.png'
+
 const productSchema = new Schema({
   name: {
+    type: String,
+    required: true,
+  },
+  brand: {
     type: String,
     required: true,
   },

@@ -1,10 +1,6 @@
 # API Documentation
 
-All routes respond with a `Content-Type` of `application/json` except `/docs`. The only accepted request body format is `application/json` and it must be specified in a `Content-Type` header, otherwise the server will respond with a `415 Unsupported Media Type`.
-
-## `GET /docs`
-
-Responds with this file.
+All routes respond with a `Content-Type` of `application/json`. The only accepted request body format is `application/json` and it must be specified in a `Content-Type` header, otherwise the server will respond with a `415 Unsupported Media Type`.
 
 ## `GET /products`
 

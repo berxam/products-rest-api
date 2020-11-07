@@ -17,6 +17,7 @@ Creates a new product. Takes in the following parameters:
 Name     | Type     | Description
 ---------|----------|--------------
 `name`   | `String` | Name of the product.
+`brand`  | `String` | Brand/manufacturer of the product.
 `price`  | `Number` | Price in euros (€).
 `desc`   | `String` | A short description.
 `img`    | `String` | URL to the image. **Optional**, defaults to placeholder.
